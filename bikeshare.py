@@ -9,6 +9,7 @@ cities = CITY_DATA.keys()
 months = ["january", "february", "march", "april", "may", "june",
                     "july", "august", "september", "october", "november", "december", "all"]
 days = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday", "all"]
+
 def get_filters():
     """
     Asks user to specify a city, month, and day to analyze.
@@ -35,7 +36,6 @@ def get_filters():
 def load_data(city, month, day):
     """
     Loads data for the specified city and filters by month and day if applicable.
-
     Args:
         (str) city - name of the city to analyze
         (str) month - name of the month to filter by, or "all" to apply no month filter
@@ -72,7 +72,6 @@ def display_data(df):
     
 def time_stats(df):
     """Displays statistics on the most frequent times of travel."""
-
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
     # TO DO: display the most common month
@@ -81,7 +80,6 @@ def time_stats(df):
     print('The most common day of week is '+str(df['day_of_week'].mode()[0]))
     # TO DO: display the most common start hour
     print('The most common start hour is '+str(df['Start Time'].dt.hour.mode()[0]))
-
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -123,7 +121,6 @@ def trip_duration_stats(df):
 
 def user_stats(df):
     """Displays statistics on bikeshare users."""
-
     print('\nCalculating User Stats...\n')
     start_time = time.time()
     # TO DO: Display counts of user types
@@ -140,7 +137,6 @@ def user_stats(df):
         print('The earliest year of birth is '+str(int(df['Birth Year'].min())))
         print('The most recent year of birth is '+str(int(df['Birth Year'].max())))
         print('The most common year of birth is '+str(int(df['Birth Year'].mode()[0])))
-          
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -148,7 +144,6 @@ def main():
     while True:
         city, month, day = get_filters()
         df = load_data(city, month, day)
-
         time_stats(df)
         station_stats(df)
         trip_duration_stats(df)
