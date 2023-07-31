@@ -18,6 +18,7 @@ def get_filters():
         (str) month - name of the month to filter by, or "all" to apply no month filter
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
+    
     print('Hello! Let\'s explore some US bikeshare data!')
     city = input("Enter a city (chicago, new york city, washington): ").strip().lower()
     while city not in cities:
@@ -43,6 +44,7 @@ def load_data(city, month, day):
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
     """
+
     # load data file into a dataframe
     df = pd.read_csv(CITY_DATA[city])
     # convert the Start Time column to datetime
@@ -72,6 +74,7 @@ def display_data(df):
     
 def time_stats(df):
     """Displays statistics on the most frequent times of travel."""
+
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
     # TO DO: display the most common month
@@ -85,6 +88,7 @@ def time_stats(df):
 
 def station_stats(df):
     """Displays statistics on the most popular stations and trip."""
+
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
     # TO DO: display most commonly used start station
@@ -99,6 +103,7 @@ def station_stats(df):
     
 def trip_duration_stats(df):
     """Displays statistics on the total and average trip duration."""
+
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
     # TO DO: display total travel time
@@ -121,6 +126,7 @@ def trip_duration_stats(df):
 
 def user_stats(df):
     """Displays statistics on bikeshare users."""
+
     print('\nCalculating User Stats...\n')
     start_time = time.time()
     # TO DO: Display counts of user types
